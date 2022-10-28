@@ -1,9 +1,5 @@
 Credits:
-
-    Demo Images:
-        Unsplash:       	(https://www.unsplash.com)
-
-    Icons:
+    	Icons:
 		Themify Icons: 		(https://themify.me/themify-icons)
 
 	Other:
