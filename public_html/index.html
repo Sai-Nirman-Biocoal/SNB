@@ -96,7 +96,7 @@
                     <div class="card mb-4 mb-md-0">
                         <div class="card-body">
                             <small class="text-primary font-weight-bold">03</small>
-                            <h5 class="card-title mt-3">Bed Material (Refractory Sand)<h5>
+                            <h5 class="card-title mt-3">Bed Material (Refactory Sand)<h5>
                             <p class="mb-0">Info to be inserted</p>
                         </div>
                     </div>
@@ -135,7 +135,7 @@
             </div>
         </div>
     </section>
-    <!-- End OF Service Section -->
+    <!-- End OF Products Section -->
 
     <!-- About Section -->
     <section class="section" id="about">
@@ -372,7 +372,75 @@
                     </div>                                                   
                 </div>
             </div>   
-        </div>            
+        </div>
+        <div style="display: flex; justify-content: center; justify-items: center;">
+        <a onclick="openForm()" class="ml-4 nav-link btn btn-primary btn-sm rounded" style="width: fit-content;">
+            <span style="color: white"> Request a Quote</span></a>
+        </div>
+        
+        <div class="form-popup" id="myForm" style="overflow-y: auto; height: 500px">
+        <form action="/action_page.php" class="form-container">
+            <div class="form-group">
+            <h4>Request Quotation</h4>
+            </div>
+            
+            <div class="form-group">
+                <label for="email"><b>Email <span style="color: red">*</span></b></label>
+               <input type="email" class="form-control" name="email" id="email" placeholder="Email Address" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="yourname"><b>Your Name <span style="color: red">*</span></b></label>
+               <input type="text" class="form-control" name="yourname" id="yourname" placeholder="Your Name" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="company"><b>Company Name</b></label>
+               <input type="text" class="form-control" name="company" id="company" placeholder="Your Company Name">
+            </div>
+            
+            <div class="form-group">
+                <label for="mob"><b>Mobile No.</b></label>
+               <input type="text" class="form-control" name="mob" id="mobile" placeholder="Mobile Number" pattern="[789][0-9]{9}>
+            </div>
+            
+            <div class="form-group">
+                <label for="product"><b>Product <span style="color: red">*</span></b></label>
+               <select class="form-control" id="product" name="product" required>
+                  <option>Select Product</option>
+                  <option>Biomass Briquettes</option>
+                  <option>Biomass Pellets</option>
+                  <option>Coal</option>
+                  <option>Alum</option>
+                  <option>Charcoal</option>
+                  <option>Refactory Sand (Bed Material)</option>
+               </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="loc"><b>Delivery Address <span style="color: red">*</span></b></label>
+                <input type="text" class="form-control" name="loc" id="location" placeholder="Delivery Address" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="quan"><b>Quantity (in Tonnes)<span style="color: red">*</span></b></label>
+                <input type="number" step="any" class="form-control" name="quan" id="quantity" placeholder="Quantity in Tonnes" required>
+            </div>
+
+            <button type="submit" class="btn-primary rounded">Submit</button>
+            <button type="button" class="btn-warning rounded" onclick="closeForm()">Close</button>
+        </form>
+</div>
+
+<script>
+function openForm() {
+  document.getElementById("myForm").style.display = "block";
+}
+
+function closeForm() {
+  document.getElementById("myForm").style.display = "none";
+}
+</script>
     </section>
     <!-- End of portfolio section -->
 
