@@ -379,7 +379,7 @@
         </div>
         
         <div class="form-popup" id="myForm" style="overflow-y: auto; height: 500px">
-        <form action="/action_page.php" class="form-container">
+        <form method="POST" class="form-container" name="sheets">
             <div class="form-group">
             <h4>Request Quotation</h4>
             </div>
@@ -401,7 +401,7 @@
             
             <div class="form-group">
                 <label for="mob"><b>Mobile No.</b></label>
-               <input type="text" class="form-control" name="mob" id="mobile" placeholder="Mobile Number" pattern="[789][0-9]{9}>
+               <input type="text" class="form-control" name="mob" id="mobile" placeholder="Mobile Number" pattern="[6-9]{1}[0-9]{9}">
             </div>
             
             <div class="form-group">
@@ -427,12 +427,30 @@
                 <input type="number" step="any" class="form-control" name="quan" id="quantity" placeholder="Quantity in Tonnes" required>
             </div>
 
-            <button type="submit" class="btn-primary rounded">Submit</button>
+            <button type="submit" class="btn-primary rounded" onclick="sample(this);return false;">Submit</button>
             <button type="button" class="btn-warning rounded" onclick="closeForm()">Close</button>
         </form>
 </div>
-
+<script src="https://wzrd.in/standalone/formdata-polyfill"></script>
+<script src="https://wzrd.in/standalone/promise-polyfill@latest"></script>
+<script src="https://wzrd.in/standalone/whatwg-fetch@latest"></script>
 <script>
+    function sample(e) {
+
+    const url = "https://script.google.com/macros/s/AKfycbwommT_Drgw2s04D-zfuFY6ofRsI5C7A1xFZuPst2zaRwAhyyMDlGaA_BYQWfMaFLsd/exec"; 
+
+    const obj = [...e.parentNode].reduce((o, f) => (o[f.name] = f.value, o), {});
+    const query = new URLSearchParams(obj); 
+    fetch(url + "?" + query, { method: "POST" })
+      .then((res) => res.json())
+      .then((res) => {
+        console.log(res);
+        alert(res.result);
+      });
+      document.getElementById("myForm").style.display = "none";
+  }
+//const scriptURL = 'https://script.google.com/macros/s/AKfycbwommT_Drgw2s04D-zfuFY6ofRsI5C7A1xFZuPst2zaRwAhyyMDlGaA_BYQWfMaFLsd/exec';
+//const form = document.forms['sheets'];
 function openForm() {
   document.getElementById("myForm").style.display = "block";
 }
