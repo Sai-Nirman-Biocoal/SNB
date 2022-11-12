@@ -41,18 +41,74 @@
                         <a class="nav-link" href="#contact">Contact</a>
                     </li>
                     <li class="nav-item">
-                        <a href="components.html" class="ml-4 nav-link btn btn-primary btn-sm rounded">Buy / Sell</a>
+                        <a href="#query" class="ml-4 nav-link btn btn-primary btn-sm rounded">Sell</a>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
+    <!--
+    <div class="form-popup" id="sell" style="overflow-y: auto; height: 500px">
+            <form method="POST" action="" onSubmit="close()" class="form-container" name="sellform">
+            <div class="form-group">
+            <h4>Sell Product</h4>
+            </div>
+            
+            <div class="form-group">
+                <label for="email1"><b>Email <span style="color: red">*</span></b></label>
+               <input type="email" class="form-control" name="email1" id="email1" placeholder="Email Address" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="yourname1"><b>Your Name <span style="color: red">*</span></b></label>
+               <input type="text" class="form-control" name="yourname1" id="yourname1" placeholder="Your Name" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="company1"><b>Company Name</b></label>
+               <input type="text" class="form-control" name="company1" id="company1" placeholder="Your Company Name">
+            </div>
+            
+            <div class="form-group">
+                <label for="mob1"><b>Mobile No.<span style="color: red">*</span></b></label>
+               <input type="text" class="form-control" name="mob1" id="mob1" placeholder="Mobile Number" pattern="[6-9]{1}[0-9]{9}" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="product1"><b>Product <span style="color: red">*</span></b></label>
+               <select class="form-control" id="product1" name="product1" required>
+                   <option value="" disabled selected hidden>Choose a Product</option>
+                  <option>Biomass Briquettes</option>
+                  <option>Biomass Pellets</option>
+                  <option>Coal</option>
+                  <option>Alum</option>
+                  <option>Charcoal</option>
+                  <option>Refactory Sand (Bed Material)</option>
+                  <option>Raw Material</option>
+                  <option>Other</option>
+               </select>
+            </div>
+
+            <button type="submit" class="btn-primary rounded">Submit</button>
+            <button type="button" class="btn-warning rounded" onclick="close()">Close</button>
+        </form>
+</div>
+    <script> 
+        function open() {
+            document.getElementById("sell").style.display = "block";
+        }   
+
+        function close() {
+            document.getElementById("sell").style.display = "none";
+        }
+    </script>
+    --!>
     <!-- End Of Second Navigation -->
 
     <!-- Page Header -->
     <header class="header">
         <div class="overlay">
-            <h1 class="subtitle">Industrial Energy Solutions</h1>
+            <h1 class="subtitle">Manufacturer and Trader</h1>
             <h1 class="title" style="color: greenyellow">Sai Nirman Biocoal</h1>
             <p style="letter-spacing: 5px"> GSTIN: 27AKEPG0630L1ZD</p>
         </div>  
@@ -317,7 +373,7 @@
                             <div class="text-holder">
                                 <h6 class="title">Pellet Machine</h6>
                                 <p class="subtitle">The image shows two pellet machines connected with
-                                    conveyer belts to load the pellets onto a truck!</p>
+                                    conveyor belts to load the pellets onto a truck!</p>
                             </div>
                         </div>
                     </div>                                                     
@@ -379,7 +435,7 @@
         </div>
         
         <div class="form-popup" id="myForm" style="overflow-y: auto; height: 500px">
-        <form method="POST" class="form-container" name="sheets">
+            <form method="POST" action="https://script.google.com/macros/s/AKfycbwommT_Drgw2s04D-zfuFY6ofRsI5C7A1xFZuPst2zaRwAhyyMDlGaA_BYQWfMaFLsd/exec" onSubmit="closeForm()" class="form-container" name="sheets">
             <div class="form-group">
             <h4>Request Quotation</h4>
             </div>
@@ -427,16 +483,17 @@
                 <input type="number" step="any" class="form-control" name="quan" id="quantity" placeholder="Quantity in Tonnes" required>
             </div>
 
-            <button type="submit" class="btn-primary rounded" onclick="sample(this);return false;">Submit</button>
+            <button type="submit" class="btn-primary rounded">Submit</button>
             <button type="button" class="btn-warning rounded" onclick="closeForm()">Close</button>
         </form>
 </div>
-        <!--
+        <!-- End of Form
 <script src="https://wzrd.in/standalone/formdata-polyfill"></script>
 <script src="https://wzrd.in/standalone/promise-polyfill@latest"></script>
 <script src="https://wzrd.in/standalone/whatwg-fetch@latest"></script> 
         -->
 <script>
+    /*
     function sample(e) {
 
     const url = "https://script.google.com/macros/s/AKfycbwommT_Drgw2s04D-zfuFY6ofRsI5C7A1xFZuPst2zaRwAhyyMDlGaA_BYQWfMaFLsd/exec"; 
@@ -450,7 +507,8 @@
         alert(res.result);
       });
       document.getElementById("myForm").style.display = "none";
-  }
+      return false;
+  } */
 //const scriptURL = 'https://script.google.com/macros/s/AKfycbwommT_Drgw2s04D-zfuFY6ofRsI5C7A1xFZuPst2zaRwAhyyMDlGaA_BYQWfMaFLsd/exec';
 //const form = document.forms['sheets'];
 function openForm() {
@@ -600,7 +658,7 @@ function closeForm() {
                                 <input type="email" class="form-control text-white rounded-0 bg-transparent" name="Email" placeholder="Email" required>
                             </div>
                             <div class="form-group col-sm-4">
-                                <input type="text" class="form-control text-white rounded-0 bg-transparent" name="Subject" placeholder="Subject">
+                                <input type="text" class="form-control text-white rounded-0 bg-transparent" name="Mobile" placeholder="Mobile Number" required>
                             </div>
                             <div class="form-group col-12">
                                 <textarea name="Message" id="msg" cols="30" rows="4" class="form-control text-white rounded-0 bg-transparent" placeholder="Message" required></textarea>
