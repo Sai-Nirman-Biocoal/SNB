@@ -47,7 +47,7 @@
                         <a href="#query" class="ml-4 nav-link btn btn-primary btn-sm rounded">Sell</a>
                     </li>
                     <li class="nav-item">
-                        <a href="javascript:openForm()" class="ml-4 nav-link btn btn-primary btn-sm rounded">Buy</a>
+                        <a href="javascript:openForm()" id="buy" class="ml-4 nav-link btn btn-primary btn-sm rounded">Buy</a>
                     </li>
                 </ul>
             </div>
@@ -549,7 +549,16 @@
 //const scriptURL = 'https://script.google.com/macros/s/AKfycbwommT_Drgw2s04D-zfuFY6ofRsI5C7A1xFZuPst2zaRwAhyyMDlGaA_BYQWfMaFLsd/exec';
 //const form = document.forms['sheets'];
 function openForm() {
-  document.getElementById("myForm").style.display = "block";
+  var x = document.getElementById("myForm");
+  var y = document.getElementById("buy");
+  if(x.style.display === "block"){
+      x.style.display = "none";
+      y.innerHTML="Buy";
+  }
+  else{
+      x.style.display="block";
+      y.innerHTML="Close";
+  }
 }
 
 function closeForm() {
