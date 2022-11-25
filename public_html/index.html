@@ -228,15 +228,43 @@
                                 4) To achieve complete customer satisfaction.<br>
                                 5) To maintain professional relationship with our dedicated clients.
                             </p>
+                            <div style="display: flex; justify-content: center; justify-items: center; padding-top: 25px;">
+                                <a onclick="openiframe()" class="ml-4 nav-link btn btn-primary btn-sm rounded" style="width: fit-content;">
+                                <span style="color: white" id="cb">See Company Profile</span></a>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>              
         </div>
+        <script>
+            function openiframe() {
+                var x = document.getElementById("canvaprofile");
+                var b = document.getElementById("cb");
+                if (x.style.display === "none") {
+                    x.style.display = "block";
+                    b.innerHTML = "Hide";
+                } else {
+                x.style.display = "none";
+                b.innerHTML = "Show Company Profile";
+                }
+            }
+        </script>
+            
+        <div style="display: none" id="canvaprofile">
+        <div style="position: relative; width: 100%; height: 0; padding-top: 56.2500%;
+ padding-bottom: 0; box-shadow: 0 2px 8px 0 rgba(63,69,81,0.16); margin-top: 1.6em; margin-bottom: 0.9em; overflow: hidden;
+ border-radius: 8px; will-change: transform;">
+  <iframe loading="lazy" style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; border: none; padding: 0;margin: 0;"
+    src="https:&#x2F;&#x2F;www.canva.com&#x2F;design&#x2F;DAFRQnnOYV8&#x2F;view?embed" allowfullscreen="allowfullscreen" allow="fullscreen">
+  </iframe>
+</div>
+<a href="https:&#x2F;&#x2F;www.canva.com&#x2F;design&#x2F;DAFRQnnOYV8&#x2F;view?utm_content=DAFRQnnOYV8&amp;utm_campaign=designshare&amp;utm_medium=embeds&amp;utm_source=link" target="_blank" rel="noopener">SNB Profile</a> by Sai Nirman Biocoal
+        </div>
     </section>
     <!-- End OF About Section -->
 
-    <!-- Portfolio Section -->
+    <!-- Gallery Section -->
     <section id="portfolio" class="section portfolio-section">
         <div class="container">
             <h6 class="section-title text-center">Gallery</h6>
@@ -748,8 +776,9 @@ function closeForm() {
             </ul> 
         </div>
     </section>
-    <!-- End of Testmonial Section -->
+    <!-- End of Testmonial and Our Customers Section -->
 
+   
     <!-- Contact Section -->
     <section id="contact" class="section has-img-bg pb-0">
         <div class="container">
