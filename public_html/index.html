@@ -247,11 +247,14 @@
                 if (x.style.display === "none") {
                     x.style.display = "block";
                     b.innerHTML = "Hide";
+                    var scrollDiv = document.getElementById("canvaprofile").offsetTop;
+                    window.scrollTo({ top: scrollDiv, behavior: 'smooth'});
                 } else {
                 x.style.display = "none";
                 b.innerHTML = "Show Company Profile";
                 }
-                document.getElementById("canvaprofile").scrollIntoView();
+                //document.getElementById("canvaprofile").scrollIntoView();
+                
                 //location.href="#";
                 //location.href="#canvaprofile";
             }
