@@ -205,7 +205,6 @@ figure {
 }
 
 img {
-  max-width: 100%;
   vertical-align: middle;
   border-style: none;
 }
@@ -11452,6 +11451,15 @@ textarea.form-control {
   height: 100vh;
   min-height: 500px;
   background: url(../imgs/header.jpeg) no-repeat center center fixed;
+  background-size: cover;
+  overflow: hidden;
+}
+
+.careerheader{
+    position: relative;
+  height: 100vh;
+  min-height: 500px;
+  background: url(../imgs/careersbg.jpeg) no-repeat center center fixed;
   background-size: cover;
   overflow: hidden;
 }
