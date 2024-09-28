@@ -10,6 +10,25 @@
 
       gtag('config', 'G-1TL8RLEHFJ');
     </script>
+    <script>
+        function callApi(path) {
+          var scriptUrl = `https://script.google.com/macros/s/AKfycbweKy2ByVIUOF8x9KYw9ioBZMuyvsCPXraW9VLEEub03b-7LpO1se3cI3DcHYjXJseKTg/exec?path=${path}`;
+
+          fetch(scriptUrl)
+            .then(response => response.json())
+            .then(result => {
+              console.log("Received data:"+result);
+              if (path === "getProfileLink") {
+                document.getElementById('downloadProfile').href = result.url;
+              }
+            })
+            .catch(error => console.error('Error:', error));
+        }
+
+        window.onload = function() {
+          callApi('getProfileLink');
+        };
+      </script>
 	<meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="Providing complete Energy Requirements for Industries since 2013">
@@ -251,7 +270,9 @@
                             <div style="display: flex; justify-content: center; justify-items: center; padding-top: 25px;">
                                 <a onclick="openiframe()" class="ml-4 nav-link btn btn-primary btn-sm rounded" style="width: fit-content;">
                                 <span style="color: white" id="cb"><i class="ti-eye" style="margin: 8px;"></i>See Company Profile</span></a>
-                                <a href="profile.pdf" class="ml-4 nav-link btn btn-primary btn-sm rounded" download="Sai Nirman Biocoal" target="_blank"><i class="ti-download" style="margin: 8px;"></i>Download Profile</a>
+                                <a id="downloadProfile" class="ml-4 nav-link btn btn-primary btn-sm rounded" download="Sai Nirman Biocoal.pdf" target="_blank">
+                                    <i class="ti-download" style="margin: 8px;"></i>Download Profile
+                                </a>
                             </div>
                         </div>
                     </div>
