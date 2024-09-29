@@ -17,9 +17,16 @@ var markerOptions = {
 };
 
 function addMarkers(data) {
-    data.forEach(location => {
+    data.forEach((location, index) => {
         if (location.Latitude && location.Longitude) {
             const marker = L.marker([location.Latitude, location.Longitude], markerOptions).addTo(map);
+            if (index === 0) {
+                var sidebarCont = generatePopupContent(location);
+                document.getElementById('sidebarContent').innerHTML = sidebarCont;
+                document.getElementById('sidebarContent').classList.add('active');
+                marker.bindPopup(sidebarCont);
+            }
+
             function generatePopupContent(location) {
                 let content = `<h3 style="text-align: center; color: #9acd32; margin-bottom: 15px;">${location.Location}</h3>`;
 
