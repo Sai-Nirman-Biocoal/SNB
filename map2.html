@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Interactive Map</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <style>
+        body {
+            display: flex;
+            justify-content: center; /* Center the content horizontally */
+            align-items: center; /* Center the content vertically */
+            height: 100vh; /* Make body full height of the viewport */
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Sidebar styling */
+        #sidebar {
+            width: 25%;
+            padding: 20px;
+            background-color: #ffffff;
+            box-sizing: border-box;
+            overflow-y: auto;
+            height: 60vh; /* Make the sidebar the same height as the map */
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start; /* Align content to the top */
+            font-size: 1.25vw;;
+        }
+
+        #map {
+            height: 60vh;
+            width: 50%;
+        }
+
+        .popup-content img {
+          max-width: 90%;
+          height: auto;
+          display: block;
+          margin-left: auto;
+          margin-right: auto;
+        }
+
+        .sidebar-content {
+            display: none;
+        }
+
+        .sidebar-content.active {
+            display: block;
+        }
+
+        .sidebar-content img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 10px;
+        }
+
+        .sidebar-content h3 {
+            margin-top: 0;
+            font-size: 1.5vw; /* Increase header font size */
+            text-align: center; /* Center align the heading */
+            color: #9acd32; /* Change heading color */
+        }
+
+        @media (max-width: 768px) {
+        body {
+            flex-direction: column; /* Stack sidebar and map vertically */
+        }
+
+        #sidebar {
+            display: none; /* Hide sidebar on mobile */
+        }
+
+        #map {
+            width: 95%; /* Make map full width */
+        }
+    }
+    </style>
+</head>
+<body>
+
+<!-- Sidebar for displaying popup content -->
+<div id="sidebar">
+    <div id="sidebarContent" class="sidebar-content">
+        <h3>Location Details</h3>
+        <p>Hover over a marker to see details here.</p>
+    </div>
+</div>
+
+<!-- Map container -->
+<div id="map" class="container"></div>
+
+<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+<script src="finalMap.js"></script>
+</body>
+</html>

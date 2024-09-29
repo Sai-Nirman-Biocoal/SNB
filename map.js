@@ -1,18 +1,25 @@
 // Initialize the map, centered on India
-const map = L.map('map').setView([20.5937, 78.9629], 5);
+const map = L.map('map').setView([20.5937, 78.9629], 7);
 
 // Add a blank tile layer with state borders
 L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
   maxZoom: 19
 }).addTo(map);
 
+var iconOptions = {
+            iconUrl: 'assets/imgs/map_marker.png',
+            iconSize: [70, 70]
+         }
+var customIcon = L.icon(iconOptions);
 
-
+var markerOptions = {
+            icon: customIcon
+         }
 
 function addMarkers(data) {
   data.forEach(location => {
     if (location.Latitude && location.Longitude) {
-      const marker = L.marker([location.Latitude, location.Longitude]).addTo(map);
+      const marker = L.marker([location.Latitude, location.Longitude],markerOptions).addTo(map);
 
       function generatePopupContent(location) {
         let content = `<h3>${location.Location}</h3>`;
@@ -33,7 +40,11 @@ function addMarkers(data) {
       }
 
       const popupContent = generatePopupContent(location);
-      marker.bindPopup(popupContent);
+      const popupOptions = {
+              maxWidth: window.innerWidth * 0.75,
+              closeButton: true
+            };
+      marker.bindPopup(popupContent, popupOptions);
       marker.on('mouseover', function () {
         this.openPopup();
       });
