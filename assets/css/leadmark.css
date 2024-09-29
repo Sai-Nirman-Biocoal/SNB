@@ -72,6 +72,66 @@ body {
   background-color: #fff;
 }
 
+#manufacturingUnitSection {
+    display: flex;
+    flex-direction: column; /* Stack headings vertically */
+}
+
+#sidebar {
+    width: 35%;
+    padding: 20px;
+    background-color: #ffffff;
+    box-sizing: border-box;
+    overflow-y: auto;
+    height: 70vh; /* Make the sidebar the same height as the map */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Align content to the top */
+    font-size: 1.30vw;;
+}
+
+#map {
+    height: 70vh;
+    flex: 1;
+}
+
+#contentContainer {
+    display: flex; /* Flexbox for sidebar and map */
+    flex-wrap: wrap; /* Allow wrapping */
+    justify-content: space-between; /* Space between items */
+}
+
+.popup-content img {
+  max-width: 90%;
+  height: auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.sidebar-content {
+    display: none;
+    margin: 10px;
+}
+
+.sidebar-content.active {
+    display: block;
+}
+
+.sidebar-content img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.sidebar-content h3 {
+    margin-top: 0;
+    margin-bottom: 1.5vw;
+    font-size: 1.5vw; /* Increase header font size */
+    text-align: center; /* Center align the heading */
+    color: #9acd32; /* Change heading color */
+}
+
 [tabindex="-1"]:focus {
   outline: 0 !important;
 }
@@ -2115,15 +2175,27 @@ pre code {
 }
 
 @media (max-width: 767.98px) {
-  .table-responsive-md {
-    display: block;
-    width: 100%;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-  }
-  .table-responsive-md > .table-bordered {
-    border: 0;
-  }
+    .table-responsive-md {
+        display: block;
+        width: 100%;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+    .table-responsive-md > .table-bordered {
+        border: 0;
+    }
+
+    #manufacturingUnitSection {
+        flex-direction: column;
+    }
+
+    #sidebar {
+        display: none; /* Hide map sidebar on mobile */
+    }
+
+    #map {
+      width: 95%;
+    }
 }
 
 @media (max-width: 991.98px) {

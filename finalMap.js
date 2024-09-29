@@ -1,5 +1,5 @@
 // Initialize the map, centered on India
-const map = L.map('map').setView([19.8762, 75.3433], 7);
+const map = L.map('map').setView([19.8762, 75.3433], 5);
 
 // Add a blank tile layer with state borders
 L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
@@ -21,7 +21,7 @@ function addMarkers(data) {
         if (location.Latitude && location.Longitude) {
             const marker = L.marker([location.Latitude, location.Longitude], markerOptions).addTo(map);
             function generatePopupContent(location) {
-                let content = `<h3>${location.Location}</h3>`;
+                let content = `<h3 style="text-align: center; color: #9acd32; margin-bottom: 15px;">${location.Location}</h3>`;
 
                 // Use the base64 string directly
                 if (location['Image Link']) {
