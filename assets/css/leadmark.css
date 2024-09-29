@@ -84,6 +84,7 @@ body {
     box-sizing: border-box;
     overflow-y: auto;
     height: 70vh; /* Make the sidebar the same height as the map */
+    max-height: 500px;
     display: flex;
     flex-direction: column;
     justify-content: flex-start; /* Align content to the top */
@@ -92,6 +93,7 @@ body {
 
 #map {
     height: 70vh;
+    max-height: 500px;
     flex: 1;
 }
 
