@@ -7,7 +7,7 @@ L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
 }).addTo(map);
 
 var iconOptions = {
-    iconUrl: 'assets/imgs/map_marker.png',
+    iconUrl: '../assets/imgs/map_marker.png',
     iconSize: [70, 70]
 };
 var customIcon = L.icon(iconOptions);
