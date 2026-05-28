@@ -1,6 +1,6 @@
 // node.js Packages / Dependencies
 const gulp          = require('gulp');
-const sass          = require('gulp-sass');
+const sass          = require('gulp-sass')(require('sass'));
 const uglify        = require('gulp-uglify');
 const rename        = require('gulp-rename');
 const concat        = require('gulp-concat');
@@ -16,23 +16,23 @@ const clean         = require('gulp-clean');
 // Paths
 var paths = {
     root: { 
-        www:        './public_html'
+        www:        './'
     },
     src: {
-        root:       'public_html/assets',
-        html:       'public_html/**/*.html',
-        css:        'public_html/assets/css/*.css',
-        js:         'public_html/assets/js/*.js',
-        vendors:    'public_html/assets/vendors/**/*.*',
-        imgs:       'public_html/assets/imgs/**/*.+(png|jpg|gif|svg)',
-        scss:       'public_html/assets/scss/**/*.scss'
+        root:       'assets',
+        html:       ['**/*.html', '!node_modules/**', '!.git/**', '!.antigravitycli/**'],
+        css:        'assets/css/*.css',
+        js:         'assets/js/*.js',
+        vendors:    'assets/vendors/**/*.*',
+        imgs:       'assets/imgs/**/*.+(png|jpg|jpeg|gif|svg|webp)',
+        scss:       'assets/scss/**/*.scss'
     },
     dist: {
-        root:       'public_html/dist',
-        css:        'public_html/dist/css',
-        js:         'public_html/dist/js',
-        imgs:       'public_html/dist/imgs',
-        vendors:    'public_html/dist/vendors'
+        root:       'dist',
+        css:        'dist/css',
+        js:         'dist/js',
+        imgs:       'dist/imgs',
+        vendors:    'dist/vendors'
     }
 }
 
@@ -91,7 +91,7 @@ gulp.task('clean', function () {
 });
 
 // Prepare all assets for production
-gulp.task('build', gulp.series('sass', 'css', 'js', 'vendors', 'img'));
+gulp.task('build', gulp.series('css', 'js', 'vendors', 'img'));
 
 
 // Watch (SASS, CSS, JS, and HTML) reload browser on change
