@@ -52,5 +52,10 @@ $(window).on("load", function() {
                 queue: !1
             }
         }), !1
-    })
+    });
+
+    // Recalculate Isotope layout when any lazy-loaded image loads
+    t.find("img").on("load", function() {
+        t.isotope("layout");
+    });
 })
